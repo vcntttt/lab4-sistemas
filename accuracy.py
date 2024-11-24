@@ -43,9 +43,8 @@ for nK in aK:
     correct = 0
     for clase, features in test.items():
         for f in features:
+          total += 1
           result = KNN(training, f, nK)
-        total += 1
-        if result == dLabel[clase]:
+          if result == dLabel[clase]:
             correct += 1
-
     print(f"Precision en K = {nK}: {correct/total * 100:.2f}%")
